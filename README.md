@@ -12,7 +12,7 @@ In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) 
  *
  * @param winner    Integer value of the winner team index, or TEAM_NONE if the round ended in a tie.
  */
-public void OnRoundConcluded(int winner);
+function void OnRoundConcluded(int winner);
 ```
 
 ## Example use
