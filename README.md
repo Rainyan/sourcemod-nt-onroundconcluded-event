@@ -21,13 +21,23 @@ public void OnRoundConcluded(int winner);
 
 #include <neotokyo>
 
+// Optional; use if the OnRoundConcluded is critical to your plugin
+public void OnAllPluginsLoaded()
+{
+    if (FindConVar("sm_onroundconcluded_version") == null)
+    {
+        SetFailState("This plugin requires the \"NEOTOKYO OnRoundConcluded Event\" plugin");
+    }
+}
+
+// The Neotokyo team index definitions are provided by the neotokyo.inc include
 public void OnRoundConcluded(int winner)
 {
-	char teams[][] = {
-		"none", "spectator", "Jinrai", "NSF"
-	};
-	
-	PrintToServer("Round concluded; winner is: %s", teams[winner]);
+    char teams[][] = {
+        "none", "spectator", "Jinrai", "NSF"
+    };
+
+    PrintToServer("Round concluded; winner is: %s", teams[winner]);
 }
 ```
 
