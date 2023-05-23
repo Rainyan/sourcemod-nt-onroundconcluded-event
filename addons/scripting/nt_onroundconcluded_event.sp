@@ -12,7 +12,7 @@ public Plugin myinfo = {
 	description = "Provides the OnRoundConcluded global forward for plugin developers.",
 	author = "Rain",
 	version = PLUGIN_VERSION,
-	url = ""
+	url = "https://github.com/Rainyan/sourcemod-nt-onroundconcluded-event"
 };
 
 Handle _fwd;
