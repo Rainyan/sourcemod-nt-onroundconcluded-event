@@ -3,7 +3,7 @@ Provides the frame-perfect `OnRoundConcluded` global forward for plugin develope
 
 ## Build requirements
 * SourceMod 1.7 or newer
-* The [SourceMod Neotokyo include](https://github.com/softashell/sourcemod-nt-include)
+* The [SourceMod Neotokyo include](https://github.com/softashell/sourcemod-nt-include) version 1.2 or newer
 
 ## For plugin developers
 
