@@ -19,6 +19,7 @@ function void OnRoundConcluded(int winner);
 ```sp
 #include <sourcemod>
 
+// The Neotokyo TEAM_... index definitions are provided by the neotokyo.inc include
 #include <neotokyo>
 
 // Optional; use if the OnRoundConcluded is critical to your plugin
@@ -30,7 +31,6 @@ public void OnAllPluginsLoaded()
     }
 }
 
-// The Neotokyo team index definitions are provided by the neotokyo.inc include
 public void OnRoundConcluded(int winner)
 {
     char teams[][] = {
