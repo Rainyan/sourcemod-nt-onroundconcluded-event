@@ -15,10 +15,6 @@ public Plugin myinfo = {
 	url = ""
 };
 
-#define GAMESTATE_WAITING_FOR_PLAYERS 1
-#define GAMESTATE_ROUND_ACTIVE 2
-#define GAMESTATE_ROUND_OVER 3
-
 Handle _fwd;
 
 int _prev_state;
