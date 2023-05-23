@@ -27,3 +27,6 @@ public void OnRoundConcluded(int winner)
 	PrintToServer("Round concluded; winner is: %s", teams[winner]);
 }
 ```
+
+## Notes
+The forward will **not** trigger if a round ends before it had started (ie. all players in a team dying/disconnecting before the freeze time ends, invalidating the round). Only rounds that have properly gone through the full round start freeze time, and concluded in a team victory or stalemate will trigger the forward.
