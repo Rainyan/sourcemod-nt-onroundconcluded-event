@@ -48,7 +48,7 @@ public void OnRoundConcluded(int winner)
 ```
 
 ## Notes
-* The forward will **not** trigger if a round ends before it had started (ie. all players in a team dying/disconnecting before the freeze time ends, invalidating the round). Only rounds that have properly gone through the full round start freeze time, and concluded in a team victory or stalemate will trigger the forward.
+* The forward will **not** trigger if a round ends before it had started (ie. all players in a team dying/disconnecting before the freeze time ends, invalidating the round). Only rounds that have properly gone through the full round start freeze time (gamestate 1->2), and concluded in a team victory or stalemate (gamestate 2->3) will trigger the forward.
 
 * This forward is game mode agnostic, and takes no stance on whether the ghost was captured or not. Use the [OnGhostCaptured forward](https://github.com/softashell/nt-sourcemod-plugins/blob/master/scripting/nt_ghostcap.sp) for detecting a ghost capture, instead.
 
