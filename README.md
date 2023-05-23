@@ -1,5 +1,5 @@
 # sourcemod-nt-onroundconcluded-event
-Provides the frame-perfect `OnRoundConcluded` global forward for plugin developers.
+Provides the frame-perfect `OnRoundConcluded` global forward for Neotokyo plugin developers.
 
 ## Build requirements
 * SourceMod 1.7 or newer
