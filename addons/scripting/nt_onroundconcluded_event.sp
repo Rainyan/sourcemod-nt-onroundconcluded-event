@@ -26,6 +26,9 @@ int _prev_jin_score, _prev_nsf_score;
 
 public void OnPluginStart()
 {
+	CreateConVar("sm_onroundconcluded_version", PLUGIN_VERSION,
+		"NEOTOKYO OnRoundConcluded Event version", FCVAR_DONTRECORD);
+
 	_fwd = CreateGlobalForward("OnRoundConcluded", ET_Ignore, Param_Cell);
 
 	HookEvent("game_round_start", OnRoundStart);
@@ -40,7 +43,7 @@ public void OnRoundStart(Event event, const char[] name, bool dontBroadcast)
 public void OnGameFrame()
 {
 	int state = GameRules_GetProp("m_iGameState");
-	
+
 	if (state == GAMESTATE_ROUND_OVER && _prev_state == GAMESTATE_ROUND_ACTIVE)
 	{
 		Call_StartForward(_fwd);
@@ -73,6 +76,6 @@ public void OnGameFrame()
 			Call_Finish();
 		}
 	}
-	
+
 	_prev_state = state;
 }
