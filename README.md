@@ -1,10 +1,16 @@
 # sourcemod-nt-onroundconcluded-event
 Provides the frame-perfect `OnRoundConcluded` global forward for plugin developers.
 
-## Background
+## Build requirements
+* SourceMod 1.7 or newer
+* The [SourceMod Neotokyo include](https://github.com/softashell/sourcemod-nt-include)
+
+## For plugin developers
+
+### Background
 In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) `game_round_start` and `game_round_end` for tracking game state. The problem with `game_round_end` is that it triggers instantly before the next `game_round_start`, so it can't be used for detecting the moment a round has reached its conclusion. This leads to most plugins that need this state rolling their own looping solutions, ending up in duplicate work and a source for bugs. This plugin looks to alleviate that, by exposing a global forward that other plugins can listen to for capturing this info.
 
-## Prototype
+### Prototype
 ```sp
 /**
  * Triggers when a round that has started with >0 players in both player teams
@@ -15,7 +21,7 @@ In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) 
 function void OnRoundConcluded(int winner);
 ```
 
-## Example use
+### Example use
 ```sp
 #include <sourcemod>
 
