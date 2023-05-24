@@ -39,6 +39,7 @@ public void OnAllPluginsLoaded()
 
 public void OnRoundConcluded(int winner)
 {
+    // The winner index cannot be TEAM_SPECTATOR, but defining for completeness in this example.
     char teams[][] = {
         "none", "spectator", "Jinrai", "NSF"
     };
