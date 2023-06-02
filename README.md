@@ -24,7 +24,7 @@ In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) 
 function void OnRoundConcluded(int winner);
 ```
 
-Note that you don't need an include file to use this forward; just declare it as public as in the example code below.
+Note that you don't need an include file to use this forward; just declare it as `public`, as in the example code below.
 
 ### Example use
 ```sp
