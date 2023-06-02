@@ -15,6 +15,9 @@ In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) 
 /**
  * Triggers when a round that has started with >0 players in both player teams
  * (TEAM_JINRAI and TEAM_NSF), ends.
+ * Note that this will also trigger for rounds that end during the freeze time
+ * due to all players in Jinrai and/or NSF disconnecting or dying before the round
+ * could start proper.
  *
  * @param winner    Integer value of the winner team index, or TEAM_NONE if the round ended in a tie.
  */
@@ -49,8 +52,6 @@ public void OnRoundConcluded(int winner)
 ```
 
 ## Notes
-* The forward will **not** trigger if a round ends before it had started (ie. all players in a team dying/disconnecting before the freeze time ends, invalidating the round). Only rounds that have properly gone through the full round start freeze time (gamestate 1->2), and concluded in a team victory or stalemate (gamestate 2->3) will trigger the forward.
-
 * This forward is game mode agnostic, and takes no stance on whether the ghost was captured or not. Use the [OnGhostCapture forward](https://github.com/softashell/nt-sourcemod-plugins/blob/master/scripting/nt_ghostcap.sp) for detecting a ghost capture, instead.
 
 * The forward is **not** an Event, and as such you can't intercept it with Plugin_Handled/Plugin_Stop etc. If you want to manipulate the team score, you'll have to do so manually after receiving the forward.
