@@ -8,7 +8,7 @@ Provides the frame-perfect `OnRoundConcluded` global forward for Neotokyo plugin
 ## For plugin developers
 
 ### Background
-In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) `game_round_start` and `game_round_end` for tracking game state. The problem with `game_round_end` is that it triggers instantly before the next `game_round_start`, so it can rarely be usefully utilized for detecting the moment a round has reached its conclusion. This leads to most plugins that need this state rolling their own looping solutions, ending up in duplicate work and a source for bugs. This plugin looks to alleviate that, by exposing a global forward that other plugins can listen to for capturing this info.
+In NT, we have the [native events](https://wiki.alliedmods.net/Neotokyo_Events) `game_round_start` and `game_round_end` for tracking game state. The problem with `game_round_end` is that it triggers right before the next `game_round_start`, so it can rarely be usefully utilized for detecting the moment a round has reached its conclusion. This leads to most plugins that need this state rolling their own looping solutions, ending up in duplicate work and a source for bugs. This plugin looks to alleviate that, by exposing a global forward that other plugins can listen to for capturing this info.
 
 ### Prototype
 ```sp
